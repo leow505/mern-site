@@ -1,0 +1,6 @@
+PUT http://localhost:5000/api/events/678348d89c83b4767b04e464
+content-type: application/json
+
+{
+    "name": "Science and Innovation Fair"
+}
