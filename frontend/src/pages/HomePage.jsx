@@ -1,6 +1,6 @@
 
 import { Box, Container, HStack, VStack } from '@chakra-ui/react';
-import Slideshow from '../components/slideshow';
+import Slideshow from '../components/Slideshow';
 import Calendar from '../components/Calendar';
 
 const HomePage = () => {
