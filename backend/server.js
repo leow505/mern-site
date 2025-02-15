@@ -9,6 +9,7 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const __dirname = path.resolve();
 
 app.use(express.json());
 
@@ -27,7 +28,4 @@ if(process.env.NODE_ENV === "production"){
 app.listen(PORT, () =>{
     connectDB();
     console.log("Server started at port " + PORT);
-    console.log("Environment variables loaded:");
-    console.log("JWT_SECRET configured:", !!process.env.JWT_SECRET);
-    console.log("MONGODB_URI configured:", !!process.env.MONGO_URI);
 });
