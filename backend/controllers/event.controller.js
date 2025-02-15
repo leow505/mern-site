@@ -4,7 +4,24 @@ import mongoose from "mongoose";
 
 export const getEvents = async (req, res) =>{
     try {
-        const events = await Event.find({});
+        // Get query parameters
+        const { startDate, endDate } = req.query;
+        
+        // Build query
+        let query = {};
+        
+        // Add date range to query if provided
+        if (startDate || endDate) {
+            query.date = {};
+            if (startDate) query.date.$gte = new Date(startDate);
+            if (endDate) query.date.$lte = new Date(endDate);
+        }
+
+        // Find events with query and sort by date
+        const events = await Event.find(query)
+            .sort({ date: 1 }) 
+            .exec();
+
         res.status(200).json({success: true, data: events});
     } catch (error) {
         console.log("error in getting events: ", error.message);

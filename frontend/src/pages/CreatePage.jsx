@@ -10,7 +10,6 @@ const CreatePage = () => {
     date: "",
     location: "",
     picture: "",
-
   });
 
   const toast = useToast();
@@ -33,11 +32,13 @@ const CreatePage = () => {
         status: "success",
         isClosable:true
       });
-      setNewEvent({name: "",
+      setNewEvent({
+        name: "",
         description: "",
         date: "",
         location: "",
-        picture: "",})
+        picture: "",
+      })
     }
   }
 
@@ -87,7 +88,6 @@ const CreatePage = () => {
             />
             <Button colorScheme="blue" onClick={handleAddEvent} w="full">Add Event</Button>
           </VStack>
-
         </Box>
       </VStack>
     </Container>

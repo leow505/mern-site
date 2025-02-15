@@ -19,6 +19,10 @@ const eventSchema = new mongoose.Schema({
     picture:{
         type: String,
         default: null
+    },
+    featured: {
+        type: Boolean,
+        default: false
     }
 }, {
     versionKey: false
